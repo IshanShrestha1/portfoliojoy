@@ -35,8 +35,14 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Hi, I'm <span class="highlight">Ishan Shrestha</span></h1>
-                    <h2 class="hero-subtitle">Technical Student</h2>
+                    <h1 class="hero-title">
+                        <span class="animated-text">Hi, I'm </span>
+                        <span class="highlight name-animate">Ishan Shrestha</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="text-rotate" data-period="2000" 
+                              data-rotate='[ "Technical Student", "Web Developer", "Programmer" ]'></span>
+                    </h2>
                     <p class="hero-description">I Create Beautiful, Functional Websites Using HTML , CSS And Javascript.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -138,7 +144,12 @@
     <div class="container">
         <h2 class="section-title">My <span class="highlight">Projects</span></h2>
         <p class="section-subtitle">Here are some of my recent works</p>
-    
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="app">Apps</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+        </div>
         
         <div class="projects-grid">
             <!-- Project 1 -->
@@ -191,7 +202,7 @@
                     </div>
                     <div class="contact-details">
                         <h3>Email</h3>
-                        <a href="mailto:your.email@example.com">is.ishanshrestha@gmail.com</a>
+                        <a href="#">is.ishanshrestha@gmail.com</a>
                     </div>
                 </div>
                 
@@ -201,7 +212,7 @@
                     </div>
                     <div class="contact-details">
                         <h3>Phone</h3>
-                        <a href="tel:+1234567890">9813212751</a>
+                        <p>9813212751</p>
                     </div>
                 </div>
                 
@@ -245,6 +256,57 @@
         </div>
     </div>
 </section>
+        <!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">Portfolio</a>
+                <p class="footer-text">Creating digital experiences that matter</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Services</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3 class="footer-title">Newsletter</h3>
+                <p>Subscribe to my newsletter for the latest updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <p class="copyright">&copy; <span id="year"></span> Ishan Shrestha. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>

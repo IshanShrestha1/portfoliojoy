@@ -581,6 +581,31 @@
     margin-bottom: 50px;
     font-size: 1.2rem;
 }
+/* Projects Filter */
+.projects-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid #3498db;
+    color: #3498db;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #3498db;
+    color: white;
+}
 
 
 /* Projects Grid */
@@ -840,4 +865,215 @@
 
 .contact-form {
     transition-delay: 0.2s;
+}
+/* Footer Section */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 60px 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.footer-text {
+    color: #bdc3c7;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #3498db;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #3498db;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #2980b9;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-social .social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.footer-social .social-link:hover {
+    background: #3498db;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    color: #bdc3c7;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-brand {
+        max-width: 100%;
+    }
+}
+/* Footer Animation */
+.footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.footer.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Animated Text Styles */
+.animated-text {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.name-animate {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards 0.5s;
+}
+
+.text-rotate {
+    display: inline-block;
+    min-width: 180px; /* Adjust based on your longest text */
+    text-align: left;
+    position: relative;
+}
+
+.text-rotate::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }

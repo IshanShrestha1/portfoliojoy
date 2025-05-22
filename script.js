@@ -191,3 +191,96 @@ document.addEventListener('DOMContentLoaded', function() {
         contactObserver.observe(contactSection);
     }
 });
+// Update copyright year automatically
+document.addEventListener('DOMContentLoaded', function() {
+    // Copyright year
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    // Newsletter form
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            // Here you would typically send the email to your newsletter service
+            console.log('Subscribed with:', email);
+            alert('Thank you for subscribing!');
+            this.reset();
+        });
+    }
+
+    // Footer animation
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                footerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const footer = document.querySelector('.footer');
+    if (footer) {
+        footerObserver.observe(footer);
+    }
+});
+
+
+// Text Rotator Animation
+class TextRotator {
+    constructor(element) {
+        this.element = element;
+        this.period = parseInt(element.getAttribute('data-period'), 2000) || 2000;
+        this.rotateText = JSON.parse(element.getAttribute('data-rotate')) || [];
+        this.loopNum = 0;
+        this.txt = '';
+        this.isDeleting = false;
+        this.tick();
+    }
+    
+    tick() {
+        const i = this.loopNum % this.rotateText.length;
+        const fullTxt = this.rotateText[i];
+        
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+        
+        this.element.textContent = this.txt;
+        
+        let delta = 200 - Math.random() * 100;
+        
+        if (this.isDeleting) {
+            delta /= 2;
+        }
+        
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+        
+        setTimeout(() => this.tick(), delta);
+    }
+}
+
+// Initialize animations when DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize text rotator
+    const rotateElements = document.querySelectorAll('.text-rotate');
+    rotateElements.forEach(element => new TextRotator(element));
+    
+    // Add animation class to trigger CSS animations
+    setTimeout(() => {
+        document.querySelector('.animated-text').classList.add('animate');
+        document.querySelector('.name-animate').classList.add('animate');
+    }, 100);
+});
