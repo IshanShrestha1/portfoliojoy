@@ -701,7 +701,66 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
+/* Project Links Styles */
+.project-info a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    border: 2px solid #3498db;
+}
 
+.project-info a:hover {
+    background-color: transparent;
+    color: #3498db;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+
+.project-info a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #3498db;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    border: 2px solid #3498db;
+}
+
+.project-info a:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+
+/* For better spacing */
+.project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-info h3,
+.project-info p,
+.project-info a {
+    width: 100%;
+}
+
+.project-info a {
+    align-self: center; /* or flex-start if you want left-aligned */
+    text-align: center;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .projects-grid {
